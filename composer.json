@@ -1,0 +1,17 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/glevine/rephlect"
+    }
+  ],
+  "require": {
+    "slim/slim": "2.*",
+    "glevine/rephlect": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app"
+    }
+  }
+}
