@@ -135,16 +135,16 @@
         },
         {
             "name": "glevine/rephlect",
-            "version": "0.1.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/glevine/rephlect.git",
-                "reference": "603a929a1f96b3047be37c720219433884893e3a"
+                "reference": "db25f082943580d778404e2accf5e865ed0bd8ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/glevine/rephlect/zipball/603a929a1f96b3047be37c720219433884893e3a",
-                "reference": "603a929a1f96b3047be37c720219433884893e3a",
+                "url": "https://api.github.com/repos/glevine/rephlect/zipball/db25f082943580d778404e2accf5e865ed0bd8ea",
+                "reference": "db25f082943580d778404e2accf5e865ed0bd8ea",
                 "shasum": ""
             },
             "require": {
@@ -173,10 +173,10 @@
                 "slim"
             ],
             "support": {
-                "source": "https://github.com/glevine/rephlect/tree/0.1.1",
+                "source": "https://github.com/glevine/rephlect/tree/0.2.0",
                 "issues": "https://github.com/glevine/rephlect/issues"
             },
-            "time": "2015-05-04 15:58:34"
+            "time": "2015-05-05 14:49:20"
         },
         {
             "name": "slim/slim",

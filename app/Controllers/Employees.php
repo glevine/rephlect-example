@@ -4,7 +4,8 @@ namespace App\Controllers;
 use App\Models\Employee;
 
 /**
- * @Route("/Employees")
+ * The "id" parameter must be at least one digit for any route defined in this class with an "id" parameter.
+ * @Route("/Employees", conditions={"id"="\d+"})
  */
 class Employees
 {
@@ -30,15 +31,37 @@ class Employees
     }
 
     /**
-     * @Route("/:id")
+     * Overrides the class level conditions for the "id" parameter. It must be at least three digits.
+     * @Route("/:id", conditions={"id"="\d{3,}"})
+     *
+     * A second route is associated with this method, which takes more than one name parameter.
+     * @Route("/:first_name/:last_name", conditions={"first_name"="[a-zA-Z]{3,}", "last_name"="[a-zA-Z]{3,}"})
      */
     public function show($id)
     {
-        return new Employee('Brenda', 'Wylde', 'CIO');
+        $args = func_get_args();
+
+        if (count($args) > 1) {
+            return new Employee(ucfirst($args[0]), ucfirst($args[1]), 'Director');
+        } else {
+            return new Employee('Brenda', 'Wylde', 'CIO');
+        }
     }
 
     /**
-     * @Route("/:id", verb="put")
+     * @Route("/:last_name", conditions={"last_name"="[a-zA-Z]{3,}"})
+     */
+    public function showByLastName($lastName)
+    {
+        return array(
+            new Employee('Bill', ucfirst($lastName), 'Janitor'),
+            new Employee('Susan', ucfirst($lastName), 'VP'),
+        );
+    }
+
+    /**
+     * This method is used for both PUT and PATCH.
+     * @Route("/:id", verb={"put", "patch"})
      */
     public function update($id, $data = array())
     {

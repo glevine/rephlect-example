@@ -28,13 +28,39 @@
   }
 ]
 ```
-#### GET: /Employees/4
+#### GET: /Employees/123
 ```
 {
   "name": "Brenda Wylde",
   "first_name": "Brenda",
   "last_name": "Wylde",
   "title": "CIO"
+}
+```
+#### GET: /Employees/wallace
+```
+[
+  {
+    "name": "Bill Wallace",
+    "first_name": "Bill",
+    "last_name": "Wallace",
+    "title": "Janitor"
+  },
+  {
+    "name": "Susan Wallace",
+    "first_name": "Susan",
+    "last_name": "Wallace",
+    "title": "VP"
+  }
+]
+```
+#### GET: /Employees/george/simmons
+```
+{
+  "name": "George Simmons",
+  "first_name": "George",
+  "last_name": "Simmons",
+  "title": "Director"
 }
 ```
 #### POST: /Employees
@@ -50,6 +76,18 @@ Request Body: {"first_name": "Jack", "last_name": "White", "title": "Jack of All
 }
 ```
 #### PUT: /Employees/4
+```
+Content-Type: application/json
+Request Body: {"title": "CMO"}
+
+{
+  "name": "Brenda Wylde",
+  "first_name": "Brenda",
+  "last_name": "Wylde",
+  "title": "CMO"
+}
+```
+#### PATCH: /Employees/4
 ```
 Content-Type: application/json
 Request Body: {"title": "CMO"}
